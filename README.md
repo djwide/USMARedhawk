@@ -1,3 +1,0 @@
-# USMARedhawk
-
-#words words words
