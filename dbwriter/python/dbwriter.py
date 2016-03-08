@@ -48,7 +48,7 @@ class dbwriter_i(dbwriter_base):
             insertString += str(data[i]) + ", "
 #        self.cursor.execute("INSERT INTO TestTable(time, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, count) VALUES(" + insertString[0:len(insertString) - 3])
 #        print "INSERT INTO RedhawkData(time, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, count) VALUES(" + insertString + str(self.count)
-        self.cursor.execute("INSERT INTO RedhawkData(time, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, count) VALUES(" + insertString + str(self.count) + ")")
+        self.cursor.execute("INSERT INTO transmissions(id, time, db, frequency, latitude, longitude, angle, transmitting, count) VALUES(" + insertString + str(self.count) + ")")
         # NOTE: You must make at least one valid pushSRI call
         outData = 'a'
         if sriChanged:
