@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA V2.2.2 SPD//EN" "softpkg.dtd">
-<softpkg id="DCE:e2b62b1c-78c4-4eec-b08d-0e7413ade830" name="dbwriter" type="sca_compliant">
+<softpkg id="DCE:269e9f27-b5b6-4024-a3e6-e53934505cf1" name="dbwriter" type="2.0.0">
   <title></title>
   <author>
     <name>null</name>
@@ -19,7 +19,7 @@
     </code>
     <programminglanguage name="Python"/>
     <humanlanguage name="EN"/>
-    <runtime name="python" version="2.4.4"/>
+    <runtime name="python" version="2.6.6"/>
     <os name="Linux"/>
   </implementation>
 </softpkg>

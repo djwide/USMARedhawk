@@ -1,6 +1,6 @@
 # By default, the RPM will install to the standard REDHAWK SDR root location (/var/redhawk/sdr)
 # You can override this at install time using --prefix /new/sdr/root when invoking rpm (preferred method, if you must)
-%{!?_sdrroot: %define _sdrroot /var/redhawk/sdr}
+%{!?_sdrroot: %global _sdrroot /var/redhawk/sdr}
 %define _prefix %{_sdrroot}
 Prefix:         %{_prefix}
 
@@ -20,18 +20,21 @@ License:        None
 Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  redhawk-devel >= 1.10
-Requires:       redhawk >= 1.10
+BuildRequires:  redhawk-devel >= 2.0
+Requires:       redhawk >= 2.0
+
 
 # Interface requirements
-BuildRequires:  bulkioInterfaces >= 1.10
-Requires:       bulkioInterfaces >= 1.10
+BuildRequires:  bulkioInterfaces >= 2.0
+Requires:       bulkioInterfaces >= 2.0
 
 BuildArch: noarch
 
 
 %description
 Component %{name}
+ * Commit: __REVISION__
+ * Source Date/Time: __DATETIME__
 
 
 %prep
@@ -63,9 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,redhawk,redhawk,-)
-%dir %{_prefix}/dom/components/%{name}
-%{_prefix}/dom/components/%{name}/dbwriter.scd.xml
-%{_prefix}/dom/components/%{name}/dbwriter.prf.xml
-%{_prefix}/dom/components/%{name}/dbwriter.spd.xml
-%{_prefix}/dom/components/%{name}/python
+%dir %{_prefix}/dom/components/dbwriter
+%{_prefix}/dom/components/dbwriter/dbwriter.scd.xml
+%{_prefix}/dom/components/dbwriter/dbwriter.prf.xml
+%{_prefix}/dom/components/dbwriter/dbwriter.spd.xml
+%{_prefix}/dom/components/dbwriter/python
 
