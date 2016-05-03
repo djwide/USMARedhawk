@@ -141,8 +141,6 @@ am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
 build_alias = 
 builddir = .
-bulkio_CFLAGS = -D__x86_64__ -D__linux__ -D__OSVERSION__=2 -DENABLE_EVENTS=1 -I/usr/local/redhawk/core/include/bulkio -I/usr/local/redhawk/core/include/ossie -I/usr/local/redhawk/core/include -I/usr/local/redhawk/core/share/idl  
-bulkio_LIBS = -L/usr/local/redhawk/core/lib64 -lbulkio-2.0 -lbulkioInterfaces -lossiecf -lossieidl -lCOS4 -lomniDynamic4 -lomniORB4 -lomnithread  
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}

@@ -9,6 +9,7 @@ import logging
 import MySQLdb as mdb
 import sys
 import time
+import random
 
 
 from dbwriter_base import *
@@ -30,7 +31,10 @@ class dbwriter_i(dbwriter_base):
             print "Error " + str(e.args[0]) + ": " + str(e.args[1])
             sys.exit(1)
         # TODO add customization here.
-       
+        
+    def constructor(self):
+        self.port_dataFloat_in.registerMessage("fromUpToInsert", dbwriter_base.FromUpToInsert, self.messageReceived)  
+        self.port_dataFloat_in2.registerMessage("fromCentToDB", dbwriter_base.FromCentToDB, self.messageReceived2)
 
     def process(self):
         """
@@ -38,34 +42,52 @@ class dbwriter_i(dbwriter_base):
         """
 
         # TODO fill in your code here
-        dataX, T, EOS, streamID, sri, sriChanged, inputQueueFlushed = self.port_dataFloat_in.getPacket()
-        data= [30.000, 777.777, 41.394083, -73.955667, 90.549,  1]
+        
+        # NOTE: You must make at least one valid pushSRI call'''
+        return NOOP
+    
+    def messageReceived(self, msgId, msgData):
+        '''self._log.info("messageReceived *************************")
+        self._log.info("messageReceived msgId " + str(msgId))
+        self._log.info("messageReceived msgData " + str(msgData)) 
+        '''
+        data= [msgData.X, msgData.Y]
         
         if data == None:
             return NOOP
-        insertString= '20160322103000, '
+    
         #YYYMMDDHHMMSS = datetime
         #f = open("rhtest.txt", "wr")
-        self.count += 1
-        for i in range(0, 5):
-            insertString += str(data[i]) + ", "
-        insertString += str(data[5])
+        insertString ='20160428094500, '+ '462.6325, '+ str(data[0]) + ", " +str(data[1])
+        logging.info(insertString)
 #        self.cursor.execute("INSERT INTO TestTable(time, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, count) VALUES(" + insertString[0:len(insertString) - 3])
-        self.cursor.execute("INSERT INTO transmissions(time, db, frequency, latitude, longitude, angle, transmitting) VALUES(" + insertString +");")
-        # NOTE: You must make at least one valid pushSRI call
-        outData = 'a'
-        if sriChanged:
-            self.port_dataFloat_out.pushSRI(sri);
-
-        self.port_dataFloat_out.pushPacket(outData, T, EOS, streamID)
-        return NORMAL
-        self._log.debug("process() example log message")
-        return NOOP
+        self.cursor.execute("INSERT INTO target(time, frequency, latitude, longitude) VALUES(" + insertString +");") 
+        
+        
+    def messageReceived2(self, msgId, msgData):
+        '''self._log.info("messageReceived *************************")
+        self._log.info("messageReceived msgId " + str(msgId))
+        self._log.info("messageReceived msgData " + str(msgData))
+        '''
+        #x= random.randint(1,3)
+        tempLOB=msgData.aoa - msgData.comp
+        data= ['20170322104500', msgData.node, msgData.ave, msgData.freq, msgData.wave, msgData.lat,  msgData.long, tempLOB]
+        
+        if data == None:
+            return NOOP
+    
+        insertString= ""
+        #YYYMMDDHHMMSS = datetime
+        #f = open("rhtest.txt", "wr")
+        for i in range(0, 7):
+            insertString += str(data[i]) + ", "
+        insertString += str(data[7])
+        logging.info(insertString)
+        self.cursor.execute("INSERT INTO receivers(time, sensorNum, db, frequency, wavelength, sensorlatitude, sensorlongitude, lob) VALUES(" + insertString +");") 
 #INSERT INTO TestTable(vals) VALUES(vals)
 
 if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
     logging.debug("Starting Component")
-    print "hello"
     start_component(dbwriter_i)
     print "test"

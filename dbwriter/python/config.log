@@ -43,74 +43,66 @@ PATH: /home/tre/bin
 ## Core tests. ##
 ## ----------- ##
 
-configure:1835: checking for a BSD-compatible install
-configure:1903: result: /usr/bin/install -c
-configure:1914: checking whether build environment is sane
-configure:1974: result: yes
-configure:2115: checking for a thread-safe mkdir -p
-configure:2154: result: /bin/mkdir -p
-configure:2167: checking for gawk
-configure:2183: found /usr/bin/gawk
-configure:2194: result: gawk
-configure:2205: checking whether make sets $(MAKE)
-configure:2227: result: yes
-configure:2325: checking for a BSD-compatible install
-configure:2393: result: /usr/bin/install -c
-configure:2454: checking for pkg-config
-configure:2472: found /usr/bin/pkg-config
-configure:2484: result: /usr/bin/pkg-config
-configure:2509: checking pkg-config is at least version 0.9.0
-configure:2512: result: yes
-configure:2523: checking for omniORB4
-configure:2529: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.0.0"
-configure:2532: $? = 0
-configure:2539: result: yes
-configure:2584: checking for ossie home
-configure:2615: result: /usr/local/redhawk/core
-configure:2622: checking to see ossie is installed
-configure:2632: checking for sdr root
-configure:2655: result: /var/redhawk/sdr
-configure:2674: using /var/redhawk/sdr/ as installation prefix
-configure:2714: checking for a Python interpreter with version >= 2.4
-configure:2731: python -c import sys # split strings by '.' and convert to numeric. Append some zeros # because we need at least 4 digits for the hex conversion. # map returns an iterator in Python 3.0 and a list in 2.x minver = list(map(int, '2.4'.split('.'))) + [0, 0, 0] minverhex = 0 # xrange is not present in Python 3.0 and range returns an iterator for i in list(range(0, 4)): minverhex = (minverhex << 8) + minver[i] sys.exit(sys.hexversion < minverhex)
-configure:2734: $? = 0
-configure:2741: result: python
-configure:2749: checking for python
-configure:2767: found /usr/bin/python
-configure:2779: result: /usr/bin/python
-configure:2799: checking for python version
-configure:2806: result: 2.6
-configure:2818: checking for python platform
-configure:2825: result: linux2
-configure:2832: checking for python script directory
-configure:2861: result: ${prefix}lib/python2.6/site-packages
-configure:2870: checking for python extension module directory
-configure:2899: result: ${exec_prefix}lib64/python2.6/site-packages
-configure:2915: checking for OSSIE
-configure:2923: $PKG_CONFIG --exists --print-errors "ossie >= 2.0"
-configure:2926: $? = 0
-configure:2941: $PKG_CONFIG --exists --print-errors "ossie >= 2.0"
-configure:2944: $? = 0
-configure:3022: result: yes
-configure:3028: checking for python module ossie
-configure:3043: result: yes
-configure:3057: checking for OMNIORB
-configure:3065: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.1.0"
-configure:3068: $? = 0
-configure:3083: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.1.0"
-configure:3086: $? = 0
-configure:3164: result: yes
-configure:3170: checking for python module omniORB
-configure:3185: result: yes
-configure:3200: checking for bulkio
-configure:3208: $PKG_CONFIG --exists --print-errors "bulkio >= 2.0"
-configure:3211: $? = 0
-configure:3226: $PKG_CONFIG --exists --print-errors "bulkio >= 2.0"
-configure:3229: $? = 0
-configure:3307: result: yes
-configure:3313: checking for python module bulkio
-configure:3328: result: yes
-configure:3483: creating ./config.status
+configure:1828: checking for a BSD-compatible install
+configure:1896: result: /usr/bin/install -c
+configure:1907: checking whether build environment is sane
+configure:1967: result: yes
+configure:2108: checking for a thread-safe mkdir -p
+configure:2147: result: /bin/mkdir -p
+configure:2160: checking for gawk
+configure:2176: found /usr/bin/gawk
+configure:2187: result: gawk
+configure:2198: checking whether make sets $(MAKE)
+configure:2220: result: yes
+configure:2318: checking for a BSD-compatible install
+configure:2386: result: /usr/bin/install -c
+configure:2447: checking for pkg-config
+configure:2465: found /usr/bin/pkg-config
+configure:2477: result: /usr/bin/pkg-config
+configure:2502: checking pkg-config is at least version 0.9.0
+configure:2505: result: yes
+configure:2516: checking for omniORB4
+configure:2522: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.0.0"
+configure:2525: $? = 0
+configure:2532: result: yes
+configure:2577: checking for ossie home
+configure:2608: result: /usr/local/redhawk/core
+configure:2615: checking to see ossie is installed
+configure:2625: checking for sdr root
+configure:2648: result: /var/redhawk/sdr
+configure:2667: using /var/redhawk/sdr/ as installation prefix
+configure:2707: checking for a Python interpreter with version >= 2.4
+configure:2724: python -c import sys # split strings by '.' and convert to numeric. Append some zeros # because we need at least 4 digits for the hex conversion. # map returns an iterator in Python 3.0 and a list in 2.x minver = list(map(int, '2.4'.split('.'))) + [0, 0, 0] minverhex = 0 # xrange is not present in Python 3.0 and range returns an iterator for i in list(range(0, 4)): minverhex = (minverhex << 8) + minver[i] sys.exit(sys.hexversion < minverhex)
+configure:2727: $? = 0
+configure:2734: result: python
+configure:2742: checking for python
+configure:2760: found /usr/bin/python
+configure:2772: result: /usr/bin/python
+configure:2792: checking for python version
+configure:2799: result: 2.6
+configure:2811: checking for python platform
+configure:2818: result: linux2
+configure:2825: checking for python script directory
+configure:2854: result: ${prefix}lib/python2.6/site-packages
+configure:2863: checking for python extension module directory
+configure:2892: result: ${exec_prefix}lib64/python2.6/site-packages
+configure:2908: checking for OSSIE
+configure:2916: $PKG_CONFIG --exists --print-errors "ossie >= 2.0"
+configure:2919: $? = 0
+configure:2934: $PKG_CONFIG --exists --print-errors "ossie >= 2.0"
+configure:2937: $? = 0
+configure:3015: result: yes
+configure:3021: checking for python module ossie
+configure:3036: result: yes
+configure:3050: checking for OMNIORB
+configure:3058: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.1.0"
+configure:3061: $? = 0
+configure:3076: $PKG_CONFIG --exists --print-errors "omniORB4 >= 4.1.0"
+configure:3079: $? = 0
+configure:3157: result: yes
+configure:3163: checking for python module omniORB
+configure:3178: result: yes
+configure:3334: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -127,7 +119,7 @@ generated by GNU Autoconf 2.63.  Invocation command line was
 
 on localhost.localdomain
 
-config.status:681: creating Makefile
+config.status:678: creating Makefile
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -146,10 +138,6 @@ ac_cv_env_PKG_CONFIG_set=
 ac_cv_env_PKG_CONFIG_value=
 ac_cv_env_build_alias_set=
 ac_cv_env_build_alias_value=
-ac_cv_env_bulkio_CFLAGS_set=
-ac_cv_env_bulkio_CFLAGS_value=
-ac_cv_env_bulkio_LIBS_set=
-ac_cv_env_bulkio_LIBS_value=
 ac_cv_env_host_alias_set=
 ac_cv_env_host_alias_value=
 ac_cv_env_target_alias_set=
@@ -160,7 +148,6 @@ ac_cv_path_install='/usr/bin/install -c'
 ac_cv_path_mkdir=/bin/mkdir
 ac_cv_prog_AWK=gawk
 ac_cv_prog_make_make_set=yes
-ac_cv_pymod_bulkio=yes
 ac_cv_pymod_omniORB=yes
 ac_cv_pymod_ossie=yes
 am_cv_pathless_PYTHON=python
@@ -174,8 +161,6 @@ pkg_cv_OMNIORB_CFLAGS='-D__x86_64__ -D__linux__ -D__OSVERSION__=2  '
 pkg_cv_OMNIORB_LIBS='-lomniORB4 -lomnithread  '
 pkg_cv_OSSIE_CFLAGS='-D__x86_64__ -D__linux__ -D__OSVERSION__=2 -DENABLE_EVENTS=1 -I/usr/local/redhawk/core/include -I/usr/local/redhawk/core/include/ossie -I/usr/local/redhawk/core/share/idl  '
 pkg_cv_OSSIE_LIBS='-L/usr/local/redhawk/core/lib64 -lossiecf -lossieidl -lCOS4 -lomniDynamic4 -lomniORB4 -lomnithread  '
-pkg_cv_bulkio_CFLAGS='-D__x86_64__ -D__linux__ -D__OSVERSION__=2 -DENABLE_EVENTS=1 -I/usr/local/redhawk/core/include/bulkio -I/usr/local/redhawk/core/include/ossie -I/usr/local/redhawk/core/include -I/usr/local/redhawk/core/share/idl  '
-pkg_cv_bulkio_LIBS='-L/usr/local/redhawk/core/lib64 -lbulkio-2.0 -lbulkioInterfaces -lossiecf -lossieidl -lCOS4 -lomniDynamic4 -lomniORB4 -lomnithread  '
 
 ## ----------------- ##
 ## Output variables. ##
@@ -231,8 +216,6 @@ am__tar='${AMTAR} chof - "$$tardir"'
 am__untar='${AMTAR} xf -'
 bindir='${exec_prefix}/bin'
 build_alias=''
-bulkio_CFLAGS='-D__x86_64__ -D__linux__ -D__OSVERSION__=2 -DENABLE_EVENTS=1 -I/usr/local/redhawk/core/include/bulkio -I/usr/local/redhawk/core/include/ossie -I/usr/local/redhawk/core/include -I/usr/local/redhawk/core/share/idl  '
-bulkio_LIBS='-L/usr/local/redhawk/core/lib64 -lbulkio-2.0 -lbulkioInterfaces -lossiecf -lossieidl -lCOS4 -lomniDynamic4 -lomniORB4 -lomnithread  '
 datadir='${datarootdir}'
 datarootdir='${prefix}/share'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'

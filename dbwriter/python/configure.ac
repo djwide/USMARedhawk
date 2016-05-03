@@ -14,8 +14,6 @@ AC_CHECK_PYMODULE(ossie, [], [AC_MSG_ERROR([the python ossie module is required]
 PKG_CHECK_MODULES([OMNIORB], [omniORB4 >= 4.1.0])
 AC_CHECK_PYMODULE(omniORB, [], [AC_MSG_ERROR([the python omniORB module is required])])
 
-PKG_CHECK_MODULES(bulkio, bulkio >= 2.0) 
-AC_CHECK_PYMODULE(bulkio, [], [AC_MSG_ERROR([the python bulkio module is required])])
 
 AC_CONFIG_FILES(Makefile)
 
