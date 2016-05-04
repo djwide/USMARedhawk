@@ -1,9 +1,9 @@
-#!/usr/bin/env python
-#
-#
-# AUTO-GENERATED
-#
-# Source: dbwriter.spd.xml
+'''
+Author: 
+Cadet David Weidman USMA Class of 2016
+321.297.9323
+david.j.weidman2.mil@mail.mil
+'''
 from ossie.resource import start_component
 import logging
 import MySQLdb as mdb
@@ -37,13 +37,7 @@ class dbwriter_i(dbwriter_base):
         self.port_dataFloat_in2.registerMessage("fromCentToDB", dbwriter_base.FromCentToDB, self.messageReceived2)
 
     def process(self):
-        """
-           
-        """
-
-        # TODO fill in your code here
         
-        # NOTE: You must make at least one valid pushSRI call'''
         return NOOP
     
     def messageReceived(self, msgId, msgData):
@@ -69,8 +63,8 @@ class dbwriter_i(dbwriter_base):
         self._log.info("messageReceived msgId " + str(msgId))
         self._log.info("messageReceived msgData " + str(msgData))
         '''
-        #x= random.randint(1,3)
         tempLOB=msgData.aoa - msgData.comp
+        #grab system time in the future.  must be in the data[0] format
         data= ['20170322104500', msgData.node, msgData.ave, msgData.freq, msgData.wave, msgData.lat,  msgData.long, tempLOB]
         
         if data == None:
