@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <struct id="accumMess" mode="readwrite">
+    <simple id="nodeID" mode="readwrite" type="octet" complex="false">
+      <kind kindtype="property"/>
+      <action type="external"/>
+    </simple>
+    <simple id="aveA" type="float" complex="false"/>
+    <simple id="wavelengthA" type="float" complex="false"/>
+    <simple id="locLongA" type="float" complex="false"/>
+    <simple id="locLatA" type="float" complex="false"/>
+    <simple id="compassA" type="float" complex="false"/>
+    <simple id="aoaA" type="float" complex="false"/>
+    <configurationkind kindtype="message"/>
+  </struct>
+  <struct id="Compass" mode="readwrite">
+    <simple id="compass" mode="readwrite" type="float">
+      <kind kindtype="property"/>
+      <action type="external"/>
+    </simple>
+    <simple id="aoa" mode="readwrite" type="float">
+      <kind kindtype="property"/>
+      <action type="external"/>
+    </simple>
+    <configurationkind kindtype="message"/>
+  </struct>
+  <struct id="runningAve" mode="readwrite">
+    <simple id="wavelength" type="float"/>
+    <simple id="ave" mode="readwrite" type="float">
+      <kind kindtype="property"/>
+      <action type="external"/>
+    </simple>
+    <configurationkind kindtype="message"/>
+  </struct>
+  <simple id="localLat" mode="readwrite" type="float">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="localLong" mode="readwrite" type="float">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="localComp" mode="readwrite" type="float">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="localAoa" mode="readwrite" type="float">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="NODEID" mode="readwrite" type="octet">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="result" mode="readwrite" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+</properties>
